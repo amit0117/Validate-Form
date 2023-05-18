@@ -59,7 +59,7 @@ function checkpasswordmatch(password,cnfpassoword){
     }
     else{
      document.getElementById('cnfpassword').classList.add('error')
-     document.getElementById('cnfpassword_err').innerHTML="Password and confirm password must match."
+     document.getElementById('cnfpassword_err').innerHTML="Password and confirm password must match or password mustn't be empty."
     }
 
 }
