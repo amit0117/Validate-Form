@@ -2,11 +2,11 @@ function validate(){
     var username=document.getElementById('username').value
     var email=document.getElementById('email').value
     var password=document.getElementById('password').value
-    var cnfpassowrord=document.getElementById('cnfpassword').value
+    var cnfpassoword=document.getElementById('cnfpassword').value
     checkusername(username)
     checkemail(email)
     checkpassword(password)
-    checkpasswordmatch(password,cnfpassowrord)
+    checkpasswordmatch(password,cnfpassoword)
 }
 function checkusername(username){
     if(username.length>7){
@@ -51,15 +51,16 @@ function checkpassword(password){
 
 }
 function checkpasswordmatch(password,cnfpassoword){
-    if(cnfpassoword===password && password!==null){
+    if(password!=='' && cnfpassoword==password  ){
+        console.log(password,cnfpassoword)
         document.getElementById('cnfpassword').classList.add('success')
         document.getElementById('cnfpassword').classList.replace('error','success')
         document.getElementById('cnfpassword_err').innerHTML=""
         
     }
-    else{
+    else {
      document.getElementById('cnfpassword').classList.add('error')
-     document.getElementById('cnfpassword_err').innerHTML="Password and confirm password must match or password mustn't be empty."
+     document.getElementById('cnfpassword_err').innerHTML="Password and confirm password should have matched."
     }
 
 }
